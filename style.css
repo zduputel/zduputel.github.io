@@ -1,0 +1,93 @@
+/* Theme */
+
+#theme { 
+ font-family: 'courierprime', monospace;
+ font-size: 13px;
+ margin: 0;
+ padding: 0;
+ white-space: pre-wrap;
+}
+
+@font-face {
+    font-family: courierprime;
+    src: url(Courier-Prime/Courier Prime.ttf);
+    font-weight: normal;
+    font-style: normal;	    
+}
+
+@font-face {
+    font-family: courierprime;
+    src: url(Courier-Prime/Courier Prime Bold.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: courierprime;
+    src: url(Courier-Prime/Courier Prime Italic.ttf);
+    font-weight: normal;
+    font-style: italic;	    
+}
+
+/*
+@font-face {
+    font-family: free-mono;
+    src: url(gnu-freefont_freemono/FreeMono.otf);
+    font-weight: normal;
+    font-style: normal;	    
+}
+
+@font-face {
+    font-family: free-mono;
+    src: url(gnu-freefont_freemono/FreeMonoBold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: free-mono;
+    src: url(gnu-freefont_freemono/FreeMonoOblique.otf);
+    font-weight: normal;
+    font-style: italic;	    
+}
+*/
+
+/* Container */
+
+#all {
+ margin: auto;
+ width: 70ch;
+}
+
+
+/****************/
+/* Pied de page */
+/****************/
+
+#footer {
+	position:relative;
+	width:100%;
+}
+
+/* Liens */
+
+a { text-decoration: none;
+  color: LightCoral;
+ }
+
+a:hover { 
+  color: #848483;
+  border-bottom:1px dotted #848483;
+ } /* lien survol par le curseur de la souris */
+
+
+/* Texte */
+
+p { 
+ margin-top:0;
+ margin-bottom:0;
+ margin-right: 0;
+ padding-left: 10px;
+ padding-right: 0px;
+ text-align: left;
+}
