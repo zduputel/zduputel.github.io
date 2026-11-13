@@ -2,7 +2,7 @@
 
 #theme { 
  font-family: 'courierprime', monospace;
- font-size: 13px;
+ font-size: 14px;
  margin: 0;
  padding: 0;
  white-space: pre-wrap;
@@ -10,23 +10,59 @@
 
 @font-face {
     font-family: courierprime;
-    src: url(Courier-Prime/Courier Prime.ttf);
+    src: url("Courier-Prime/CourierPrime-Regular.ttf") format("truetype");
     font-weight: normal;
-    font-style: normal;	    
+    font-style: normal;
 }
 
 @font-face {
     font-family: courierprime;
-    src: url(Courier-Prime/Courier Prime Bold.ttf);
+    src: url("Courier-Prime/CourierPrime-Bold.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: courierprime;
-    src: url(Courier-Prime/Courier Prime Italic.ttf);
+    src: url("Courier-Prime/CourierPrime-Italic.ttf") format("truetype");
     font-weight: normal;
-    font-style: italic;	    
+    font-style: italic;
+}
+
+@font-face {
+    font-family: courierprime;
+    src: url("Courier-Prime/CourierPrime-BoldItalic.ttf") format("truetype");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* FreeMono : page sanskrit (couvre la translittération IAST) */
+@font-face {
+    font-family: freemono;
+    src: url("FreeMono/FreeMono.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: freemono;
+    src: url("FreeMono/FreeMonoBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: freemono;
+    src: url("FreeMono/FreeMonoOblique.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: freemono;
+    src: url("FreeMono/FreeMonoBoldOblique.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
 }
 
 /*
@@ -52,11 +88,72 @@
 }
 */
 
+#theme.sanskrit {
+ font-family: freemono, monospace;
+ -webkit-text-stroke: 0.4px; /* FreeMono est plus fin que Courier Prime : on epaissit le trait */
+}
+
+/* Separateur de sections (tirets, a la Vulfpeck) */
+hr.sep {
+ border: 0;
+ border-top: 1px dashed #999;
+ margin: 0.6em 0 0.6em 10px;
+}
+
+/* Actualites chargees depuis news.inc.html */
+#news {
+ padding-left: 10px;
+}
+
+/* Photo et texte de l'en-tete alignes en haut */
+td {
+ vertical-align: top;
+}
+
+td img {
+ display: block;
+ margin-right: 1ch;
+}
+
+/* Mots sanskrits translitteres isoles (lettres absentes de Courier Prime) */
+.iast {
+ font-family: freemono, monospace;
+ -webkit-text-stroke: 0.4px;
+}
+
+/* Fiche a deux colonnes (etat civil de la page perso) */
+table.fiche {
+ border-collapse: collapse;
+ margin-left: 1ch;
+}
+
+table.fiche td:first-child {
+ width: 13ch;
+ white-space: nowrap;
+}
+
+/* Tableaux du CV (dates | contenu), lisibles aussi sur telephone */
+table.cv {
+ border-collapse: collapse;
+ margin: 1em 0 0 10px;
+}
+
+table.cv td {
+ padding: 0 0 0.3em 0;
+}
+
+table.cv td:first-child {
+ width: 12ch;
+ white-space: nowrap;
+ padding-right: 1ch;
+}
+
 /* Container */
 
 #all {
  margin: auto;
- width: 70ch;
+ max-width: 70ch;
+ padding: 0 10px;
 }
 
 
@@ -72,7 +169,7 @@
 /* Liens */
 
 a { text-decoration: none;
-  color: LightCoral;
+  color: IndianRed;
  }
 
 a:hover { 

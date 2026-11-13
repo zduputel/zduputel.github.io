@@ -36,4 +36,34 @@
       <changefreq>yearly</changefreq>
       <priority>0.3</priority>
    </url>
+   <url>
+      <loc>https://zduputel.github.io/archives.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://zduputel.github.io/preseismic.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://zduputel.github.io/sanskrit.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
+   <url>
+      <loc>https://zduputel.github.io/index-en.html</loc>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://zduputel.github.io/cv-fr.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://zduputel.github.io/perso.html</loc>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
+   </url>
 </urlset>
