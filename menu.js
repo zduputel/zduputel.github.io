@@ -48,6 +48,23 @@
     return liens.join(" | ");
   }
 
+  function pied(l) {
+    var d = new Date(document.lastModified);
+    var mois = (l === "fr")
+      ? ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
+      : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var date = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
+    return '<a href="' + base + 'perso.html">Perso</a> | ' +
+      '<a href="' + base + 'sanskrit.html" lang="sa">संस्कृतम्</a> | ' +
+      '<a href="' + base + 'about.html">' + (l === "fr" ? "À propos" : "About") + '</a>\n' +
+      (l === "fr" ? "Mise à jour : " : "Last update: ") + date;
+  }
+
+  // Pied de page : appele depuis le bas de chaque page.
+  window.piedDePage = function () {
+    document.write('<span id="pied">' + pied(langue) + '</span>');
+  };
+
   document.write('<span id="menu">' + html(langue) + '</span>');
 
   document.getElementById("menu").addEventListener("click", function (ev) {
@@ -58,6 +75,8 @@
       ev.preventDefault();
       langue = a.getAttribute("data-langue");
       document.getElementById("menu").innerHTML = html(langue);
+      var p = document.getElementById("pied");
+      if (p) p.innerHTML = pied(langue);
     }
   });
 })();
