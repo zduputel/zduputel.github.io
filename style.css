@@ -201,10 +201,10 @@ html {
 
 @media (max-width: 600px) {
  /* Accueil : photo au-dessus du texte */
- center table td {
+ center table td, table.entete td {
   display: block;
  }
- center table td img {
+ center table td img, table.entete td img {
   margin: 0 auto 1em auto;
  }
 
@@ -217,5 +217,52 @@ html {
  }
  table.fiche td + td {
   padding: 0 0 0.6em 2ch;
+ }
+}
+
+/* Publications : BibTeX affiche sous la reference */
+pre.bibtex {
+ font-family: inherit;
+ font-size: 0.9em;
+ white-space: pre-wrap;
+ margin: 0.4em 0 -1em 2ch;
+ padding: 0.5em 1ch;
+ border-left: 2px solid #ccc;
+ background: #f6f6f6;
+}
+
+/* Page 404 : sismogramme ASCII (sans retour a la ligne, defilement si besoin) */
+pre.sismo {
+ font-family: inherit;
+ white-space: pre;
+ overflow-x: auto;
+ margin: 0 0 0 10px;
+}
+
+/*****************************************************/
+/* Mode sombre "terminal" : automatique si l'appareil */
+/* du visiteur est regle en mode sombre               */
+/*****************************************************/
+@media (prefers-color-scheme: dark) {
+ html, body {
+  background: #111;
+  color: #ddd;
+ }
+ a {
+  color: #f08c80;
+ }
+ a:hover {
+  color: #aaa;
+  border-bottom-color: #aaa;
+ }
+ hr.sep {
+  border-top-color: #555;
+ }
+ pre.bibtex {
+  background: #1c1c1c;
+  border-left-color: #444;
+ }
+ img {
+  opacity: 0.92;
  }
 }

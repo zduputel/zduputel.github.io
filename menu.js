@@ -58,7 +58,29 @@
     var date = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
     return '<a href="' + base + (l === "fr" ? 'perso.html">Perso' : 'perso-en.html">Personal') + '</a> | ' +
       '<a href="' + base + 'about.html">' + (l === "fr" ? "À propos de ce site" : "About this website") + '</a>\n' +
-      (l === "fr" ? "Mise à jour : " : "Last update: ") + date;
+      (l === "fr" ? "Mise à jour : " : "Last update: ") + date +
+      '<span id="commit"></span>';
+  }
+
+  // Version du site : dernier commit du depot GitHub (en ligne seulement).
+  var DEPOT = "zduputel/zduputel.github.io";
+  var commit = null;
+  function afficherCommit() {
+    var s = document.getElementById("commit");
+    if (s && commit) {
+      s.innerHTML = ' (commit <a href="' + commit.url + '">' + commit.sha + '</a>)';
+    }
+  }
+  if (location.protocol !== "file:" && window.fetch) {
+    fetch("https://api.github.com/repos/" + DEPOT + "/commits?per_page=1")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (d && d[0]) {
+          commit = { sha: d[0].sha.slice(0, 7), url: d[0].html_url };
+          afficherCommit();
+        }
+      })
+      .catch(function () {});
   }
 
   // Pied de page : appele depuis le bas de chaque page.
@@ -67,6 +89,19 @@
   };
 
   document.write('<span id="menu">' + html(langue) + '</span>');
+
+  // Petit mot pour les curieux qui ouvrent la console du navigateur.
+  if (window.console && !window.__bonjourAffiche) {
+    window.__bonjourAffiche = true;
+    console.log(
+      "%c\n   _/\\/\\_      __/\\/\\/\\__\n__/      \\/\\_/          \\/\\/\\____\n",
+      "color: IndianRed; font-family: monospace;");
+    console.log(
+      "Bonjour, curieux ! / Hello, curious one!\n" +
+      "Ce site est fait a la main, en HTML et CSS, sans framework.\n" +
+      "This site is hand-made with plain HTML and CSS, no framework.\n" +
+      "Code : https://github.com/" + DEPOT);
+  }
 
   document.getElementById("menu").addEventListener("click", function (ev) {
     var a = ev.target.closest("a[data-langue]");
@@ -78,6 +113,7 @@
       document.getElementById("menu").innerHTML = html(langue);
       var p = document.getElementById("pied");
       if (p) p.innerHTML = pied(langue);
+      afficherCommit();
     }
   });
 })();
