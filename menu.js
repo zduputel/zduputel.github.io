@@ -8,7 +8,9 @@
     "index.html":    ["fr", "index-en.html"],
     "index-en.html": ["en", "index.html"],
     "cv-fr.html":    ["fr", "cv.html"],
-    "cv.html":       ["en", "cv-fr.html"]
+    "cv.html":       ["en", "cv-fr.html"],
+    "perso.html":    ["fr", "perso-en.html"],
+    "perso-en.html": ["en", "perso.html"]
   };
   var MENUS = {
     fr: [["index.html", "ACCUEIL"], ["publications.html", "PUBLICATIONS"],
@@ -54,9 +56,8 @@
       ? ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
       : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     var date = d.getDate() + " " + mois[d.getMonth()] + " " + d.getFullYear();
-    return '<a href="' + base + 'perso.html">Perso</a> | ' +
-      '<a href="' + base + 'sanskrit.html" lang="sa">संस्कृतम्</a> | ' +
-      '<a href="' + base + 'about.html">' + (l === "fr" ? "À propos" : "About") + '</a>\n' +
+    return '<a href="' + base + (l === "fr" ? 'perso.html">Perso' : 'perso-en.html">Personal') + '</a> | ' +
+      '<a href="' + base + 'about.html">' + (l === "fr" ? "À propos de ce site" : "About this website") + '</a>\n' +
       (l === "fr" ? "Mise à jour : " : "Last update: ") + date;
   }
 
