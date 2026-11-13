@@ -188,3 +188,34 @@ p {
  padding-right: 0px;
  text-align: left;
 }
+
+/***************************/
+/* Affichage sur telephone */
+/***************************/
+
+/* Empeche Chrome sur Android de grossir le texte de lui-meme */
+html {
+ -webkit-text-size-adjust: 100%;
+ text-size-adjust: 100%;
+}
+
+@media (max-width: 600px) {
+ /* Accueil : photo au-dessus du texte */
+ center table td {
+  display: block;
+ }
+ center table td img {
+  margin: 0 auto 1em auto;
+ }
+
+ /* Page perso : fiche sur une colonne (libelle, puis contenu en retrait) */
+ table.fiche td {
+  display: block;
+ }
+ table.fiche td:first-child {
+  width: auto;
+ }
+ table.fiche td + td {
+  padding: 0 0 0.6em 2ch;
+ }
+}
