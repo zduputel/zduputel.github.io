@@ -117,3 +117,8 @@
     }
   });
 })();
+
+window.secouer = function () {
+  document.body.classList.add("seisme");
+  setTimeout(function () { document.body.classList.remove("seisme"); }, 2000);
+};
