@@ -276,3 +276,51 @@ pre.sismo {
   color: #111;
  }
 }
+
+/*****************************************************/
+/* Impression (et "Enregistrer en PDF") : sans menu  */
+/* ni pied de page, en noir sur blanc                */
+/*****************************************************/
+@media print {
+ @page {
+  margin: 1.2cm 1.5cm;
+ }
+ html, body {
+  background: #fff;
+  color: #000;
+ }
+ #theme {
+  font-size: 10pt;
+ }
+ #all {
+  max-width: none;
+  padding: 0;
+  white-space: normal; /* evite une page blanche a la fin */
+ }
+ #all p, #all center, #all table {
+  white-space: pre-wrap;
+ }
+ #menu, #footer {
+  display: none;
+ }
+ /* Nom et adresse du site en tete de la feuille imprimee */
+ #all::before {
+  content: "Zacharie Duputel - zduputel.github.io";
+  display: block;
+  text-align: right;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+ }
+ a {
+  color: #000;
+ }
+ hr.sep {
+  border-top-color: #999;
+ }
+ tr {
+  break-inside: avoid;
+ }
+ p {
+  break-after: avoid;
+ }
+}
