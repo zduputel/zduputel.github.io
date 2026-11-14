@@ -1,0 +1,12 @@
+/* TEAM */
+Author: Zacharie Duputel
+Location: La Plaine des Cafres, La Réunion
+Site: https://zduputel.github.io
+
+/* THANKS */
+Nicolas Brantut, Vulfpeck, Rob Stenson (design lineage)
+
+/* SITE */
+Standards: HTML, CSS, a bit of JavaScript
+Fonts: Courier Prime, GNU FreeMono
+Built by hand, hosted on GitHub Pages.
