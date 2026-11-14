@@ -24,20 +24,20 @@ ______
 </center></p>
 <hr class="sep"/>
 <p>ERREUR 404
+</p><pre class="sismo">
 
-            /\          /\
-    /\     /  \        /  \      /\
-___/  \___/    \      /    \    /  \  /\__ _  _   _
-                \    /      \  /    \/
-                 \  /        \/
-                  \/
-
+                   /\
+            /\    /  \      /\
+   /\      /  \  /    \    /  \  /\
+__/  \/\  /    \/      \  /    \/  \/\_____________ ___ __ _  _   _    _
+       \/               \/
+</pre><p>
 Aucun signal détecté à cette adresse.
-<a href="#" onclick="secouer(); return false;">Déclencher un séisme&#160;?</a>
+<a href="#" onclick="secouer(); return false;">Encore une réplique&#160;?</a>
 Retour à l'<a href="/index.html">accueil</a>.
 
 No signal detected at this address.
-<a href="#" onclick="secouer(); return false;">Trigger an earthquake?</a>
+<a href="#" onclick="secouer(); return false;">Another aftershock?</a>
 Back to the <a href="/index-en.html">home page</a>.
 </p>
 
@@ -45,6 +45,11 @@ Back to the <a href="/index-en.html">home page</a>.
 <p><center><script type="text/javascript">piedDePage();</script><noscript><a href="perso.html">Perso</a> | <a href="about.html">À propos de ce site</a></noscript></center></p>
 </div>
 </div>
+
+<script type="text/javascript">
+// La page tremble toute seule a l'arrivee
+window.addEventListener("load", function () { setTimeout(window.secouer, 400); });
+</script>
 
 </body>
 </html>

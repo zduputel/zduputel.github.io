@@ -241,7 +241,7 @@ pre.bibtex {
 pre.sismo {
  font-family: inherit;
  white-space: pre;
- overflow-x: auto;
+ overflow-x: hidden;
  margin: 0 0 0 10px;
 }
 
