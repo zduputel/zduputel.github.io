@@ -177,6 +177,12 @@ a:hover {
   border-bottom:1px dotted #848483;
  } /* lien survol par le curseur de la souris */
 
+/* Texte selectionne a la souris : couleur des liens */
+::selection {
+  background: #B94A48;
+  color: #fff;
+}
+
 
 /* Texte */
 
@@ -264,5 +270,9 @@ pre.sismo {
  }
  img {
   opacity: 0.92;
+ }
+ ::selection {
+  background: #f08c80;
+  color: #111;
  }
 }
